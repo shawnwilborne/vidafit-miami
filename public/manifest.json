@@ -1,0 +1,14 @@
+{
+  "name": "VidaFit Miami",
+  "short_name": "VidaFit",
+  "description": "Eat well, move smart, fit it all in — built for the Miami hustle.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F0F2F5",
+  "theme_color": "#FF4757",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
