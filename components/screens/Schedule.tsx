@@ -4,6 +4,16 @@ import { useState } from 'react'
 import { Calendar, Clock, Dumbbell, Zap, RefreshCw, ChevronRight } from 'lucide-react'
 import { SCHEDULE_WINDOWS, WORKOUTS } from '@/lib/data'
 
+const GRADIENTS: Record<string, string> = {
+  coral:  'linear-gradient(135deg,#FF6B6B,#FF8C00)',
+  teal:   'linear-gradient(135deg,#00B4D8,#06D6A0)',
+  palm:   'linear-gradient(135deg,#06D6A0,#059669)',
+  sand:   'linear-gradient(135deg,#FFD166,#F59E0B)',
+  purple: 'linear-gradient(135deg,#8338ec,#FF4757)',
+  pink:   'linear-gradient(135deg,#FF4757,#EC4899)',
+  orange: 'linear-gradient(135deg,#F97316,#FFD166)',
+}
+
 const WEEK_DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 const TODAY_IDX = 0 // Monday
 
@@ -35,7 +45,7 @@ function WindowCard({ win, onSwap }: { win: typeof SCHEDULE_WINDOWS[0]; onSwap: 
         <span className="text-xs font-bold text-palm bg-palm/10 px-2 py-1 rounded-full">{win.duration} min free</span>
       </div>
 
-      <div className={`bg-gradient-to-r ${workout.color} rounded-2xl p-3`}>
+      <div className="rounded-2xl p-3" style={{ background: GRADIENTS[workout.color] ?? GRADIENTS.coral }}>
         <div className="flex items-center justify-between">
           <div>
             <p className="text-white font-bold text-sm">{workout.name}</p>
@@ -73,6 +83,12 @@ function WindowCard({ win, onSwap }: { win: typeof SCHEDULE_WINDOWS[0]; onSwap: 
   )
 }
 
+function getWeekDate(offset: number): string {
+  const base = new Date(2025, 5, 30) // Jun 30 2025
+  base.setDate(base.getDate() + offset)
+  return base.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+}
+
 export default function Schedule() {
   const [selectedDay, setSelectedDay] = useState(TODAY_IDX)
 
@@ -105,7 +121,7 @@ export default function Schedule() {
               >
                 <span className={`text-[10px] font-bold ${isSelected ? 'text-gray-500' : 'text-white/70'}`}>{d}</span>
                 <span className={`text-sm font-bold ${isSelected ? 'text-coral' : 'text-white'}`}>
-                  {30 + i}
+                  {new Date(2025, 5, 30 + i).getDate()}
                 </span>
                 {hasEvents && (
                   <div className={`w-1 h-1 rounded-full ${isSelected ? 'bg-coral' : 'bg-white/60'}`} />
@@ -122,7 +138,7 @@ export default function Schedule() {
           <div className="flex items-center gap-2 mb-3">
             <Calendar size={16} className="text-sand" />
             <span className="font-semibold text-midnight text-sm">
-              {WEEK_DAYS[selectedDay]}, June {30 + selectedDay}
+              {WEEK_DAYS[selectedDay]}, {getWeekDate(selectedDay)}
             </span>
           </div>
           {dayEvents.length > 0 ? (
@@ -169,7 +185,7 @@ export default function Schedule() {
                 ? WORKOUTS[0]
                 : WORKOUTS[3]
               return (
-                <div className={`bg-gradient-to-r ${w.color} rounded-2xl p-4`}>
+                <div className="rounded-2xl p-4" style={{ background: GRADIENTS[w.color] ?? GRADIENTS.coral }}>
                   <p className="text-white font-bold">{w.name}</p>
                   <p className="text-white/75 text-xs mt-0.5">{w.duration} min · {w.tag} · {w.calories} cal</p>
                   <button className="mt-3 bg-white/25 text-white text-xs font-bold px-3 py-1.5 rounded-xl">
@@ -186,15 +202,15 @@ export default function Schedule() {
           <p className="text-white font-bold text-sm mb-1">Can't make the gym today? 🏋️</p>
           <p className="text-white/60 text-xs mb-3">Instant home workout swap — no equipment, full intensity.</p>
           <div className="flex gap-2">
-            {WORKOUTS.filter(w => w.location.includes('Home')).map(w => (
-              <button
-                key={w.id}
-                className={`flex-1 bg-gradient-to-r ${w.color} rounded-xl p-2.5`}
-              >
-                <p className="text-white text-xs font-bold">{w.name}</p>
-                <p className="text-white/75 text-[10px]">{w.duration} min</p>
-              </button>
-            ))}
+            {WORKOUTS.filter(w => w.location.includes('Home')).map(w => {
+              return (
+                <button key={w.id} className="flex-1 rounded-xl p-2.5"
+                  style={{ background: GRADIENTS[w.color] ?? GRADIENTS.coral }}>
+                  <p className="text-white text-xs font-bold">{w.name}</p>
+                  <p className="text-white/75 text-[10px]">{w.duration} min</p>
+                </button>
+              )
+            })}
           </div>
         </div>
 

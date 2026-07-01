@@ -7,6 +7,17 @@ import { WORKOUTS, NEIGHBORHOODS } from '@/lib/data'
 const DURATIONS = [0, 5, 10, 15, 20] as const
 type Dur = typeof DURATIONS[number]
 
+const WORKOUT_GRADIENTS: Record<string, string> = {
+  coral:  'linear-gradient(135deg, #FF6B6B, #FF8C00)',
+  teal:   'linear-gradient(135deg, #00B4D8, #06D6A0)',
+  palm:   'linear-gradient(135deg, #06D6A0, #059669)',
+  sand:   'linear-gradient(135deg, #FFD166, #F59E0B)',
+  purple: 'linear-gradient(135deg, #8338ec, #FF4757)',
+  green:  'linear-gradient(135deg, #06D6A0, #059669)',
+  pink:   'linear-gradient(135deg, #FF4757, #EC4899)',
+  orange: 'linear-gradient(135deg, #F97316, #FFD166)',
+}
+
 function WorkoutTimer({ workout, onClose }: { workout: typeof WORKOUTS[0]; onClose: () => void }) {
   const totalSecs = workout.duration * 60
   const [remaining, setRemaining] = useState(totalSecs)
@@ -178,7 +189,7 @@ export default function Workouts() {
           <div className="flex flex-col gap-3">
             {filtered.map(w => (
               <div key={w.id} className="bg-white rounded-3xl overflow-hidden shadow-card">
-                <div className={`bg-gradient-to-r ${w.color} p-4`}>
+                <div className="p-4" style={{ background: WORKOUT_GRADIENTS[w.color] ?? WORKOUT_GRADIENTS.coral }}>
                   <div className="flex items-start justify-between">
                     <div>
                       <span className="text-white/80 text-xs font-bold uppercase tracking-wider">{w.tag}</span>
@@ -248,7 +259,8 @@ export default function Workouts() {
                     <button
                       key={w.id}
                       onClick={() => setActiveWorkout(w)}
-                      className={`flex-1 bg-gradient-to-r ${w.color} rounded-xl p-2.5 text-left`}
+                      className="flex-1 rounded-xl p-2.5 text-left"
+                      style={{ background: WORKOUT_GRADIENTS[w.color] ?? WORKOUT_GRADIENTS.coral }}
                     >
                       <p className="text-white text-xs font-bold">{w.name}</p>
                       <p className="text-white/75 text-[10px]">{w.duration} min</p>

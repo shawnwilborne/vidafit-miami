@@ -166,17 +166,32 @@ export default function Nutrition() {
                   </button>
                   {open && (
                     <div className="border-t border-gray-100">
-                      {meal.items.map((item, i) => (
-                        <div key={i} className="flex items-center justify-between px-4 py-2.5">
-                          <span className="text-sm text-midnight">{item.icon} {item.name}</span>
-                          <span className="text-sm font-medium text-gray-500">{item.cal} kcal</span>
+                      {meal.items.length === 0 ? (
+                        <div className="flex flex-col items-center py-5 gap-2">
+                          <span className="text-3xl">🍽️</span>
+                          <p className="text-sm text-gray-400">Nothing logged yet</p>
+                          <button
+                            onClick={() => setShowRestaurants(true)}
+                            className="text-xs bg-coral text-white font-semibold px-4 py-2 rounded-xl flex items-center gap-1"
+                          >
+                            <Plus size={12} /> Add dinner
+                          </button>
                         </div>
-                      ))}
-                      <div className="px-4 pb-3 pt-1">
-                        <button className="text-xs text-coral font-semibold flex items-center gap-1">
-                          <Plus size={12} /> Add item
-                        </button>
-                      </div>
+                      ) : (
+                        <>
+                          {meal.items.map((item, i) => (
+                            <div key={i} className="flex items-center justify-between px-4 py-2.5">
+                              <span className="text-sm text-midnight">{item.icon} {item.name}</span>
+                              <span className="text-sm font-medium text-gray-500">{item.cal} kcal</span>
+                            </div>
+                          ))}
+                          <div className="px-4 pb-3 pt-1">
+                            <button className="text-xs text-coral font-semibold flex items-center gap-1">
+                              <Plus size={12} /> Add item
+                            </button>
+                          </div>
+                        </>
+                      )}
                     </div>
                   )}
                 </div>

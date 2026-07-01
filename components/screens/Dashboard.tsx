@@ -23,7 +23,7 @@ function MacroRing({ value, goal, color, label, unit = 'g' }: {
           strokeDashoffset={offset}
           className="progress-ring-circle"
         />
-        <text x="38" y="42" textAnchor="middle" fontSize="13" fontWeight="700" fill="#1A1A2E">
+        <text x="38" y="42" textAnchor="middle" fontSize="13" fontWeight="700" fill="currentColor">
           {value}
         </text>
       </svg>
@@ -71,9 +71,11 @@ function WaterTracker({ current, goal }: { current: number; goal: number }) {
 }
 
 export default function Dashboard({ setTab }: { setTab: (t: string) => void }) {
-  const hour = new Date().getHours()
+  const now = new Date()
+  const hour = now.getHours()
   const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening'
-  const insight = AI_INSIGHTS[0]
+  const dateStr = now.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })
+  const insight = AI_INSIGHTS[now.getDay() % AI_INSIGHTS.length]
   const nextWindow = SCHEDULE_WINDOWS[1]
   const suggestedWorkout = WORKOUTS.find(w => w.name === nextWindow.suggested)!
 
@@ -87,7 +89,7 @@ export default function Dashboard({ setTab }: { setTab: (t: string) => void }) {
           <div>
             <p className="text-white/80 text-sm font-medium">{greeting},</p>
             <h1 className="text-white text-2xl font-display font-bold">{USER.name} 👋</h1>
-            <p className="text-white/70 text-xs mt-0.5">{USER.neighborhood} · Mon, Jun 30</p>
+            <p className="text-white/70 text-xs mt-0.5">{USER.neighborhood} · {dateStr}</p>
           </div>
           <div className="flex flex-col items-center bg-white/20 rounded-2xl px-3 py-2 backdrop-blur-sm">
             <span className="text-2xl flame-pulse">🔥</span>
@@ -180,7 +182,7 @@ export default function Dashboard({ setTab }: { setTab: (t: string) => void }) {
             <span className="font-semibold text-midnight text-sm">⏱️ You have a 20-min gap</span>
             <span className="text-xs text-gray-400">{nextWindow.time}</span>
           </div>
-          <div className={`bg-gradient-to-r ${suggestedWorkout.color} rounded-2xl p-4`}>
+          <div className="rounded-2xl p-4" style={{ background: 'linear-gradient(135deg, #00B4D8, #06D6A0)' }}>
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-white font-bold text-base">{suggestedWorkout.name}</p>

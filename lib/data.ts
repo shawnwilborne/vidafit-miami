@@ -53,6 +53,12 @@ export const MEALS = [
       { name: 'Colada de café', cal: 80, icon: '☕' },
     ],
   },
+  {
+    id: 4,
+    time: '7:00 PM',
+    label: 'Dinner',
+    items: [],
+  },
 ]
 
 export const MIAMI_RESTAURANTS = [
@@ -81,7 +87,7 @@ export const WORKOUTS = [
     tag: 'HIIT',
     location: '🏙️ Home / Office',
     exercises: ['10 Squat Jumps', '10 Push-ups', '20 Mountain Climbers', '30s Plank', '10 Burpees'],
-    color: 'from-coral to-orange-400',
+    color: 'coral',
   },
   {
     id: 2,
@@ -92,7 +98,7 @@ export const WORKOUTS = [
     tag: 'Cardio',
     location: '🌊 Bayfront Park',
     exercises: ['400m Warm-up jog', '4× 100m sprints', 'Bleacher steps ×3', 'Cool-down stretch'],
-    color: 'from-ocean to-cyan-400',
+    color: 'teal',
   },
   {
     id: 3,
@@ -103,7 +109,7 @@ export const WORKOUTS = [
     tag: 'Strength',
     location: '🏖️ South Pointe Park',
     exercises: ['Dips on bench ×15', 'Step-up lunges ×12', 'Pull-up bars ×8', 'Calf raises ×20', 'Core circuit 2 min'],
-    color: 'from-palm to-emerald-400',
+    color: 'palm',
   },
   {
     id: 4,
@@ -114,7 +120,7 @@ export const WORKOUTS = [
     tag: 'Mobility',
     location: '🏢 Anywhere',
     exercises: ['Neck rolls', 'Shoulder stretch 30s', 'Hip flexor stretch', 'Wrist circles', '5 deep breaths'],
-    color: 'from-sand to-yellow-400',
+    color: 'sand',
   },
   {
     id: 5,
@@ -125,7 +131,7 @@ export const WORKOUTS = [
     tag: 'Run',
     location: '🌉 Brickell Key',
     exercises: ['1.2 mi waterfront loop', 'Pace: 10 min/mi', 'Scenic bay views', '3 stop points for stretches'],
-    color: 'from-purple-500 to-ocean',
+    color: 'purple',
   },
   {
     id: 6,
@@ -136,7 +142,7 @@ export const WORKOUTS = [
     tag: 'Sculpt',
     location: '🏄 South Beach',
     exercises: ['Lateral band walks ×20', 'Glute bridges ×15', 'Romanian deadlifts', 'Lateral raises ×12', 'Ab circuit'],
-    color: 'from-coral to-pink-400',
+    color: 'pink',
   },
   {
     id: 7,
@@ -147,7 +153,7 @@ export const WORKOUTS = [
     tag: 'Core',
     location: '🏙️ Home / Office',
     exercises: ['30s Plank', '20 Bicycle Crunches', '15 Leg Raises', '30s Side Plank (each)', '10 V-Ups'],
-    color: 'from-purple-500 to-coral',
+    color: 'purple',
   },
   {
     id: 8,
@@ -158,7 +164,7 @@ export const WORKOUTS = [
     tag: 'Active',
     location: '🎨 Wynwood',
     exercises: ['20 min brisk art district walk', 'Lunge at each block corner', 'Calf raises at crosswalks', 'Finish at Wynwood Walls'],
-    color: 'from-orange-400 to-sand',
+    color: 'orange',
   },
 ]
 
