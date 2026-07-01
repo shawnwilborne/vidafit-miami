@@ -1,0 +1,59 @@
+.claude/launch.json
+  s_652d5ac5afbeb3::t_370e3300364ff0 1-11
+app/page.tsx
+  s_652d5ac5afbeb3::t_84a490cc125e21 1-39
+.env.local.example
+  s_652d5ac5afbeb3::t_d0d99bcddaa418 1-20
+.gitignore
+  s_652d5ac5afbeb3::t_c642a995b4021d 1-29
+app/globals.css
+  s_652d5ac5afbeb3::t_da77de5585d8bb 1-115
+app/layout.tsx
+  s_652d5ac5afbeb3::t_449d115c9a0a2f 1-35
+components/BottomNav.tsx
+  s_652d5ac5afbeb3::t_c6446d91acdc0a 1-52
+components/screens/Activity.tsx
+  s_652d5ac5afbeb3::t_157ec48dd484cc 1-228
+components/screens/Dashboard.tsx
+  s_652d5ac5afbeb3::t_ddde0c9820484c 1-219
+components/screens/Nutrition.tsx
+  s_652d5ac5afbeb3::t_cf583e8f63fd37 1-242
+components/screens/Schedule.tsx
+  s_652d5ac5afbeb3::t_94bf1f3877ac18 1-217
+components/screens/Workouts.tsx
+  s_652d5ac5afbeb3::t_f40e44bb8a5006 1-276
+lib/data.ts
+  s_652d5ac5afbeb3::t_0e5b83b404045a 1-194
+next.config.mjs
+  s_652d5ac5afbeb3::t_4fd8098ef5181c 1-6
+package-lock.json
+  s_652d5ac5afbeb3::t_e602f51765c714 1-1943
+package.json
+  s_652d5ac5afbeb3::t_ffd636c0c5f089 1-29
+postcss.config.mjs
+  s_652d5ac5afbeb3::t_388b1c0b763e6b 1-8
+public/manifest.json
+  s_652d5ac5afbeb3::t_528bc94dc1a582 1-14
+supabase-schema.sql
+  s_652d5ac5afbeb3::t_16d5f9c2467f7d 1-191
+tailwind.config.ts
+  s_652d5ac5afbeb3::t_2d8e50985831b0 1-56
+tsconfig.json
+  s_652d5ac5afbeb3::t_e3e645a393b8c2 1-20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "5f06d6536d2b546ef10abfdd4517321068f843d7",
+  "prompts": {},
+  "sessions": {
+    "s_652d5ac5afbeb3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dd811957-0720-4544-8fb7-79d868bd721f",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "shawnwilborne <wilborneshawn@gmail.com>"
+    }
+  }
+}
