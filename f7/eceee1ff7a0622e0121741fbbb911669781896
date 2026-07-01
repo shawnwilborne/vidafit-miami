@@ -1,0 +1,39 @@
+components/screens/Schedule.tsx
+  s_652d5ac5afbeb3::t_29ee33d493c27e 188,205-213
+  s_652d5ac5afbeb3::t_2fbe464a427512 48
+  s_652d5ac5afbeb3::t_281fefd94a5c3f 7-16
+  s_652d5ac5afbeb3::t_a2d670c1088f6e 86-91
+  s_652d5ac5afbeb3::t_15f52aed2df113 124
+  s_652d5ac5afbeb3::t_dee26c2d98e0ea 141
+components/screens/Workouts.tsx
+  s_652d5ac5afbeb3::t_f16dfff240d7f8 262-263
+  s_652d5ac5afbeb3::t_b072615163e775 10-16,19-20
+  s_652d5ac5afbeb3::t_07240f580a639f 17-18
+  s_652d5ac5afbeb3::t_63b35e7d6b5bde 192
+lib/data.ts
+  s_652d5ac5afbeb3::t_245200811506da 56-61
+  s_652d5ac5afbeb3::t_443587bc0239e6 90,101,112,123,134,145,156,167
+components/screens/Nutrition.tsx
+  s_652d5ac5afbeb3::t_2b194dd0ba5113 169-178,180-194
+components/screens/Dashboard.tsx
+  s_652d5ac5afbeb3::t_21fdcbc4b25df1 26
+  s_652d5ac5afbeb3::t_89255e7413424f 92
+  s_652d5ac5afbeb3::t_a105719d930c4e 74-75,77-78
+  s_652d5ac5afbeb3::t_c236ccc772d782 185
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.8",
+  "base_commit_sha": "f7eceee1ff7a0622e0121741fbbb911669781896",
+  "prompts": {},
+  "sessions": {
+    "s_652d5ac5afbeb3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "dd811957-0720-4544-8fb7-79d868bd721f",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "shawnwilborne <wilborneshawn@gmail.com>"
+    }
+  }
+}
