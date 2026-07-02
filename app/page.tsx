@@ -14,7 +14,7 @@ export default function VidaFitApp() {
   const [tab, setTab] = useState<Tab>('dashboard')
 
   const screens: Record<Tab, React.ReactNode> = {
-    dashboard: <Dashboard setTab={setTab} />,
+    dashboard: <Dashboard setTab={(t) => setTab(t as Tab)} />,
     nutrition:  <Nutrition />,
     workouts:   <Workouts />,
     activity:   <Activity />,
